@@ -35,6 +35,7 @@ $ foreman start
 Run the all test files as follows:
 ```sh
 $ bundle rspec
+```
 
 <!-- 
 ### Code:

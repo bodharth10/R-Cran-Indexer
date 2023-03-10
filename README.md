@@ -21,10 +21,6 @@ $ bundle install
 ```
 
 ```
-$ yarn install
-```
-
-```
 $ rails db:setup
 ```
 
@@ -34,6 +30,11 @@ $ rails db:setup
 ```sh
 $ foreman start
 ```
+
+
+Run the all test files as follows:
+```sh
+$ bundle rspec
 
 <!-- 
 ### Code:

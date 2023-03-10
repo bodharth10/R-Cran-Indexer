@@ -1,8 +1,7 @@
 ## Technologies:
 
 * Ruby 2.6.3
-* Vue
-* Tailwind CSS
+* Ruby 6.1.7
 
 
 ### Setup

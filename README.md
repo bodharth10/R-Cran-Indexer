@@ -1,24 +1,43 @@
-# README
+## Technologies:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby 2.6.3
+* Vue
+* Tailwind CSS
 
-Things you may want to cover:
 
-* Ruby version
+### Setup
 
-* System dependencies
+Navigate to directory where the code script is located
 
-* Configuration
+```sh
+$ cd ~/cran_indexer
+```
+Install the dependencies and devDependencies.
 
-* Database creation
+```sh
+$ rvm use 2.6.3
+````
+```
+$ bundle install
+```
 
-* Database initialization
+```
+$ yarn install
+```
 
-* How to run the test suite
+```
+$ rails db:setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Steps to run Application
 
-* ...
+```sh
+$ foreman start
+```
+
+<!-- 
+### Code:
+
+
+### Scope for improvements: -->

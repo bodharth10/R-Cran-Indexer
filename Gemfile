@@ -35,6 +35,7 @@ gem 'down','~> 5.0'
 gem 'debian-control-parser'
 gem 'rdparser', '~> 0.2.0'
 gem 'archive-tar-minitar', '~> 0.8'
+gem 'whenever', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -37,6 +37,12 @@ Run the all test files as follows:
 $ bundle rspec
 ```
 
+To write crontab file for fetching and updating the packages, execute this command:
+
+```sh
+$ whenever --update-crontab
+```
+
 <!-- 
 ### Code:
 

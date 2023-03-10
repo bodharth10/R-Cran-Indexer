@@ -21,10 +21,6 @@ $ bundle install
 ```
 
 ```
-$ yarn install
-```
-
-```
 $ rails db:setup
 ```
 
@@ -33,6 +29,18 @@ $ rails db:setup
 
 ```sh
 $ foreman start
+```
+
+
+Run the all test files as follows:
+```sh
+$ bundle rspec
+```
+
+To write crontab file for running rake tasks, execute this command:
+
+```sh
+$ whenever --update-crontab
 ```
 
 <!-- 

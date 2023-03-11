@@ -1,9 +1,9 @@
 require 'rails_helper'
 require 'spec_helper.rb'
 
-describe CranPackageIndexer do
+describe Cran::CranPackageIndexer do
   before do
-    @indexer = CranPackageIndexer.new
+    @indexer = Cran::CranPackageIndexer.new
     @packages = @indexer.get_packages
   end
 

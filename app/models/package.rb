@@ -4,7 +4,7 @@ class Package < ApplicationRecord
 
   def self.import_from_cran
     begin
-    	packages = CranPackageIndexer.new().index_packages()
+    	packages = Cran::CranPackageIndexer.new().index_packages()
     	packages.each do |pckg|
 	      package = self.find_or_initialize_by(name: pckg[:name])
 	      package.version = pckg[:version]

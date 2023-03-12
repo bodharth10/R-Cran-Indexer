@@ -37,6 +37,11 @@ Run the all test files as follows:
 $ bundle rspec
 ```
 
+* To fetch and update packages (There's a cron job that does that every day at 4 am):
+```
+bundle exec rake import_packages:run
+```
+
 To write crontab file for running rake tasks, execute this command:
 
 ```sh

@@ -1,4 +1,5 @@
 module Cran
+	# PackageParser class definition
   class PackageParser
     def parse(packages)
       begin
@@ -13,7 +14,8 @@ module Cran
         end
         package_json_arr
       rescue StandardError => e
+      	puts "Error parsing packages: #{e.message}"
       end
     end
   end
-end  
+end 

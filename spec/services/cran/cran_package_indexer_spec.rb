@@ -1,5 +1,7 @@
 require 'spec_helper'
 require 'stringio'
+require 'zlib'
+require 'debian_control_parser'
 
 RSpec.describe Cran::PackageDownloader do
   let(:package_downloader) { Cran::PackageDownloader.new }
@@ -18,17 +20,33 @@ RSpec.describe Cran::PackageDownloader do
 end
 
 RSpec.describe Cran::PackageParser do
-  let(:package_parser) { Cran::PackageParser.new }
-  let(:packages) { StringIO.new("Package: Package: A3\nVersion: 1.0.0\n") }
-
   describe '#parse' do
-    it 'parses the package list' do
-      expect(package_parser.parse(packages)) == ([
-        { 'Package': 'A3', 'Version': '1.0.0' },
+    it 'parses packages correctly' do
+      packages_gz = (Cran::PackageDownloader.new).download
+      parser = Cran::PackageParser.new
+      result = parser.parse(packages_gz).first(2)
+      expect(result).to eq([
+        {
+          :Package=>"A3", 
+          :Version=>"1.0.0", 
+          :Depends=>"R (>= 2.15.0), xtable, pbapply", 
+          :Suggests=>"randomForest, e1071", :License=>"GPL (>= 2)", 
+          :MD5sum=>"027ebdd8affce8f0effaecfcd5f5ade2", 
+          :NeedsCompilation=>"no"
+        },
+        {
+          :Package=>"AalenJohansen", 
+          :Version=>"1.0", 
+          :Suggests=>"knitr, rmarkdown", 
+          :License=>"GPL (>= 2)", 
+          :MD5sum=>"d7eb2a6275daa6af43bf8a980398b312", 
+          :NeedsCompilation=>"no"
+        }
       ])
     end
   end
 end
+
 
 RSpec.describe Cran::PackageExtractor do
   let(:package_extractor) { Cran::PackageExtractor.new }

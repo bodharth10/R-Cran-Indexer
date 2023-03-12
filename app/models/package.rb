@@ -2,8 +2,9 @@ class Package < ApplicationRecord
   validates :name, :author, :publication, :maintainer, :license, :version, :title, presence: true
   validates_uniqueness_of :name
 
-  def self.import_from_cran
-    packages = Cran::CranPackageIndexer.new.index_packages
+  def self.import_from_cran(limit = nil)
+  	limit ? Cran::CranPackageIndexer.new(limit) : Cran::CranPackageIndexer.new
+    packages =  limit ? Cran::CranPackageIndexer.new(limit).index_packages : Cran::CranPackageIndexer.new.index_packages
     packages.each do |pckg|
       package = find_or_initialize_by(name: pckg[:name])
       package.assign_attributes(

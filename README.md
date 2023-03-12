@@ -2,7 +2,7 @@
 
 * Ruby 2.6.3
 * Ruby 6.1.7
-
+* Postgresql
 
 ### Setup
 

@@ -1,4 +1,7 @@
 class Package < ApplicationRecord
+	include PgSearch::Model
+	pg_search_scope :search, against: :name, using: {:tsearch => { :prefix => true }}
+	
   validates :name, :author, :publication, :maintainer, :license, :version, :title, presence: true
   validates_uniqueness_of :name
 
@@ -14,7 +17,8 @@ class Package < ApplicationRecord
         author: pckg[:author],
         publication: pckg[:publication],
         license: pckg[:license],
-        maintainer: pckg[:maintainers]
+        maintainer: pckg[:maintainers],
+        download_url: pckg[:download_url]
       )
       package.save!
     end

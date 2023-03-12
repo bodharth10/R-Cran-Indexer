@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pg','~> 1.1'
+gem 'pg_search'
 gem 'httparty'
 gem 'foreman'
 gem 'down','~> 5.0'

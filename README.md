@@ -63,10 +63,13 @@ PackageIndexer class is responsible for indexing package information in a struct
 Open/Closed Principle (OCP):
 The code is open to extension but closed to modification. It means the code can be easily extended by adding new functionality without modifying the existing code.
 The CranPackageIndexer class can be extended to support new sources of package information or new ways of indexing the package information.
+
 Liskov Substitution Principle (LSP):
 The code follows LSP because the PackageExtractor class can be substituted with another class that has the same interface to extract package information.
+
 Interface Segregation Principle (ISP):
 The code follows ISP because each class has a well-defined interface with methods that are specific to its functionality.
+
 Dependency Inversion Principle (DIP):
 The code follows DIP because the CranPackageIndexer class depends on abstractions (PackageDownloader, PackageParser, and PackageIndexer) rather than concrete implementations. It means that the implementation of these classes can be changed without affecting the CranPackageIndexer class.
 

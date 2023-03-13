@@ -37,7 +37,20 @@ Run the all test files as follows:
 $ bundle rspec
 ```
 
-* To fetch and update packages (There is cron job that does that every day at 4 am):
+* To populate packages in database:
+```
+Package.import_from_cran(30)
+
+```
+
+* Application can be accesed on:
+
+```
+http://localhost:3000/
+
+```
+
+* To update packages (There is cron job that does that every day at 4 am):
 ```
 bundle exec rake import_packages:run
 ```

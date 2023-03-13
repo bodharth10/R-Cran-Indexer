@@ -1,1 +1,1 @@
-backend: bin/rails s -p 3001
+backend: bin/rails s -p 3000

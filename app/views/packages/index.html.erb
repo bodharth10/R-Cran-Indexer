@@ -9,14 +9,18 @@
     <% @packages.each do |package| %>
       <li>
         <h3><%= package.name %> (<%= package.version %>)</h3>
-        <p><%= package.title.split(",").map{ |m| "#{m}" }.join(' ') %></p>
-        <p>Publication date: <%= package.publication %></p>
+        <p>Title: <%= package.title.split(",").map{ |m| "#{m}" }.join(' ') %></p>
         <p>
           <%= package.description %>
         </p>
         <p>
-          Authors: <%= package.author.split(",").map{ |m| "#{m}" }.join(' ') %><br />
-          Maintainers: <%= package.maintainer.split(",").map{ |m| "#{m}" }.join(' ') %><br />
+          Version: <%= package.version %><br/>
+          R version needed: R <%= (package.dependencies.split(",").map{ |m| "#{m}" }.join(' ')).scan(/\((.*?)\)/).flatten[0] rescue nil %><br />
+          Date/Publication: <%= package.publication %><br />
+          Dependencies: <%= package.dependencies.split(",").map{ |m| "#{m}" }.join(' ') rescue nil %><br />
+          Licence: <%= package.license.split(",").map{ |m| "#{m}" }.join(' ') rescue nil %><br />
+          Authors: <%= package.author.split(",").map{ |m| "#{m}" }.join(' ') rescue nil%><br />
+          Maintainers: <%= package.maintainer.split(",").map{ |m| "#{m}" }.join(' ') rescue nil%><br />
         </p>
         <p><a href="<%= package.download_url %>">Download package</a></p>
       </li>

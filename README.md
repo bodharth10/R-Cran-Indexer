@@ -37,7 +37,7 @@ Run the all test files as follows:
 $ bundle rspec
 ```
 
-* To fetch and update packages (There's a cron job that does that every day at 4 am):
+* To fetch and update packages (There is cron job that does that every day at 4 am):
 ```
 bundle exec rake import_packages:run
 ```
@@ -52,11 +52,27 @@ $ whenever --update-crontab
 
 The code is developed by following basic ruby OOP and SOLID priciples explained below : 
 
-Single Responsibility Principle (SRP): Each class has a single responsibility. For example, the PackageIndexer class is responsible for indexing packages, the PackageFetcher class is responsible for fetching packages, the PackageParser class is responsible for parsing packages, and so on.
+SOLID principles are used in the following ways:
 
-Open/Closed Principle (OCP): The code is open for extension but closed for modification. For example, the PackageIndexer class can be extended to support indexing packages from other package managers, without modifying its existing code.
+Single Responsibility Principle (SRP):
+Each class has a single responsibility, making it easy to maintain and test.
 
-Dependency Inversion Principle (DIP): The code uses dependency injection to invert dependencies. For example, the PackageIndexer class takes instances of PackageFetcher, PackageParser, and PackageDownloader classes as constructor arguments. This allows for flexibility and testability, as different implementations of these classes can be injected into the PackageIndexer class, without modifying its existing code.
+PackageDownloader class is responsible for downloading the package information from CRAN.
+PackageParser class is responsible for parsing the package information in a format that can be indexed.
+PackageExtractor class is responsible for extracting package information from the package tarball.
+PackageIndexer class is responsible for indexing package information in a structured format.
+Open/Closed Principle (OCP):
+The code is open to extension but closed to modification. It means the code can be easily extended by adding new functionality without modifying the existing code.
+
+The CranPackageIndexer class can be extended to support new sources of package information or new ways of indexing the package information.
+Liskov Substitution Principle (LSP):
+The code follows LSP because the PackageExtractor class can be substituted with another class that has the same interface to extract package information.
+
+Interface Segregation Principle (ISP):
+The code follows ISP because each class has a well-defined interface with methods that are specific to its functionality.
+
+Dependency Inversion Principle (DIP):
+The code follows DIP because the CranPackageIndexer class depends on abstractions (PackageDownloader, PackageParser, and PackageIndexer) rather than concrete implementations. It means that the implementation of these classes can be changed without affecting the CranPackageIndexer class.
 
 All the code is implemented by following the Test Driven Development approach(TDD) using RSpec.
 

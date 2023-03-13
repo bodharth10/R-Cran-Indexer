@@ -53,7 +53,7 @@ And now you can visit the site with the URL http://localhost:3000
 bundle exec rake import_packages:run
 ```
 
-To write crontab file for running rake tasks, execute this command:
+* To write crontab file for running rake tasks, execute this command:
 
 ```sh
 $ whenever --update-crontab

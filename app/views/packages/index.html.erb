@@ -22,7 +22,7 @@
           Authors: <%= package.author.split(",").map{ |m| "#{m}" }.join(' ') rescue nil%><br />
           Maintainers: <%= package.maintainer.split(",").map{ |m| "#{m}" }.join(' ') rescue nil%><br />
         </p>
-        <p><a href="<%= package.download_url %>">Download package</a></p>
+        <p>Download Link: <a href="<%= package.download_url %>">Download package</a></p>
       </li>
     <% end %>
     <%= paginate @packages %>

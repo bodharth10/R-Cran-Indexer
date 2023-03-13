@@ -43,10 +43,9 @@ $ bundle rspec
 Package.import_from_cran(30)
 ```
 
-* Application can be accesed on:
 
 ```
-http://localhost:3000/
+And now you can visit the site with the URL http://localhost:3000
 ```
 
 * To update packages (There is cron job that does that every day at 4 am):

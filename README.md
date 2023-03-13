@@ -78,4 +78,4 @@ All the code is implemented by following the Test Driven Development approach(TD
 
 ### Scope for improvements: --
 
-As far is backend is concerned if something that can be improved is performance . And due to lack of time I have not integrated Vue and Tailwind on frontend and using basic erb. So Frontend can be improved by using Vue and infinited loading or pagination can be implemented . 
+As far is backend is concerned if something that can be improved is performance . And due to lack of time I have not integrated Vue and Tailwind on frontend, using simple html show packages and done pagination using kaminari gem . So Frontend can be improved by integrating Vue.js and infinited loading and for search debounce can be implemented . 

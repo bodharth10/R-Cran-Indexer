@@ -9,8 +9,8 @@
     <% @packages.each do |package| %>
       <li>
         <h3><%= package.name %> (<%= package.version %>)</h3>
-        <p><%= package.title.split(",").map{ |m| "#{m}" }.join(' ') %></p><br />
-        <p>Publication date: <%= package.publication %></p><br />
+        <p><%= package.title.split(",").map{ |m| "#{m}" }.join(' ') %></p>
+        <p>Publication date: <%= package.publication %></p>
         <p>
           <%= package.description %>
         </p>
@@ -18,8 +18,9 @@
           Authors: <%= package.author.split(",").map{ |m| "#{m}" }.join(' ') %><br />
           Maintainers: <%= package.maintainer.split(",").map{ |m| "#{m}" }.join(' ') %><br />
         </p>
-        <p>Download Url: <%= package.download_url %></p>
+        <p><a href="<%= package.download_url %>">Download package</a></p>
       </li>
     <% end %>
+    <%= paginate @packages %>
   </ul>
 </div>

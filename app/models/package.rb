@@ -1,5 +1,8 @@
 class Package < ApplicationRecord
 	include PgSearch::Model
+
+  paginates_per 25
+
 	pg_search_scope :search, against: :name, using: {:tsearch => { :prefix => true }}
 	
   validates :name, :author, :publication, :maintainer, :license, :version, :title, presence: true

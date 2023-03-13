@@ -61,7 +61,7 @@ $ whenever --update-crontab
 
 ### Code:
 
-The code is developed by following basic ruby OOP and SOLID priciples explained below : 
+The code is developed by following basic Ruby OOP and SOLID priciples explained below : 
 
 Single Responsibility Principle (SRP):
 Each class has a single responsibility, making it easy to maintain and test.
